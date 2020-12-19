@@ -3,11 +3,14 @@ var router = express.Router();
 const USER = require('../model').User
 
 /* GET home page. */
+router.get('',(req,res)=>{
+  res.render('index.html')
+})
 router.get('/login', (req, res) =>{
   let user_list ;
   USER.findAll().then(data=>user_list=data)
   console.log(user_list)
-  res.render('index.html', { form: user_list });
+  res.render('login.html', { form: user_list });
 });
 
 router.post('/login',(req,res)=>{

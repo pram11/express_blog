@@ -2,7 +2,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize({
     "dialect": "sqlite",
-    "storage":  "../db/db.sqlite"
+    "storage":  "db/db.sqlite"
   }) // Example for sqlite
 const db = {};
 db.sequelize = sequelize;
