@@ -1,5 +1,23 @@
-<form method="POST">
-  <input type="text" placeholder="아이디" name="username"/>
-  <input type="password" placeholder="패스워드" name="password"/>
-  <button type="submit">로그인</button>
-</form>
+<div>시작페이지 입니다</div>
+<table>
+  <thead>
+    <tr>
+      <th>제목</th>
+      <th>작성자명</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for post in post_list %}
+<tr>
+  <td>
+  <a href="/posts/{{post.id}}">
+  {{post.title}}</a>
+  <td>
+  <td>{{post.written}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="/login">로그인</a>
+<a href="/signup">회원가입</a>
+<a href="/posts/new">게시물 작성</a> 

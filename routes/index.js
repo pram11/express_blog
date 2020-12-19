@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
 const USER = require('../model').User
+const POST = require('../model').Post
 
 /* GET home page. */
 router.get('',(req,res)=>{
-  res.render('index.html')
+  POST.findAll({raw:true}).then((data)=>{
+    let post_list = data
+    console.log(post_list)
+    res.render('index.html',{post_list:post_list})
+
+  })
 })
 router.get('/login', (req, res) =>{
   let user_list ;
